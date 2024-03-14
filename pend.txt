@@ -1,0 +1,21 @@
+Você deverá criar uma calculadora para forma Geométricas Planas e Espaciais.
+
+As figuras recebem parâmetros via método Construtor.
+
+Cada classe contém um método que retorna os valores dos atributos da classe como String, dentro desse método você deverá passar um número como parâmetro para definir se essa String será com caracteres maiúsculos minúsculos, se o número for par retorna a String em maiúsculo, se for ímpar retorna em minúsculo. 
+
+O usuário primeiramente deve digitar seu nome, a aplicação constantemente deve se referir ao nome do usuário quando solicitar para ele escolher entre as opções.
+
+O programa solicita para o usuário escolher entre figuras planas e espaciais.
+
+O programa solicita para o usuário escolher determinada figura geométrica.
+
+O programa executa até o usuário escolher a opção de sair.
+
+O programa só aceita números maiores que 0.
+
+O programa não aceitas letras em lugares que devem ser números.
+
+O programa não aceita opções invalidas no menu.
+
+Resultados devem ser impressos com duas casas decimais.
