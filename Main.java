@@ -5,7 +5,7 @@ import spaceFigures.*;
 // https://fsymbols.com/generators/
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -14,20 +14,26 @@ public class Main {
         String boldRedBlack = "\033[1;0;40m";
         String reset = "\033[0m";
         System.out.println(boldRedBlack + "\n" +
-                "                                     ▒█▀▀█ ▒█▀▀▀ ▒█▀▀▀█ ▒█▀▄▀█ ▒█▀▀▀ ▀▀█▀▀ ▒█▀▀█ ▀█▀ ▒█▀▀█ 　 ▒█▀▀█ ░█▀▀█ ▒█░░░ ▒█▀▀█ ▒█░▒█ ▒█░░░ ░█▀▀█ ▀▀█▀▀ ▒█▀▀▀█ ▒█▀▀█ \n" +
-                "                                     ▒█░▄▄ ▒█▀▀▀ ▒█░░▒█ ▒█▒█▒█ ▒█▀▀▀ ░▒█░░ ▒█▄▄▀ ▒█░ ▒█░░░ 　 ▒█░░░ ▒█▄▄█ ▒█░░░ ▒█░░░ ▒█░▒█ ▒█░░░ ▒█▄▄█ ░▒█░░ ▒█░░▒█ ▒█▄▄▀ \n" +
-                "                                     ▒█▄▄█ ▒█▄▄▄ ▒█▄▄▄█ ▒█░░▒█ ▒█▄▄▄ ░▒█░░ ▒█░▒█ ▄█▄ ▒█▄▄█ 　 ▒█▄▄█ ▒█░▒█ ▒█▄▄█ ▒█▄▄█ ░▀▄▄▀ ▒█▄▄█ ▒█░▒█ ░▒█░░ ▒█▄▄▄█ ▒█░▒█ \n" +
+                "                                     ▒█▀▀█ ▒█▀▀▀ ▒█▀▀▀█ ▒█▀▄▀█ ▒█▀▀▀ ▀▀█▀▀ ▒█▀▀█ ▀█▀ ▒█▀▀█ 　 ▒█▀▀█ ░█▀▀█ ▒█    ▒█▀▀█ ▒█  █ ▒█    ░█▀▀█ ▀▀█▀▀ ▒█▀▀▀█ ▒█▀▀█ \n" +
+                "                                     ▒█ ▄▄ ▒█▀▀▀ ▒█   █ ▒█ █ █ ▒█▀▀▀  ░█   ▒█▄▄▀ ▒█  ▒█ 　    ▒█    ▒█▄▄█ ▒█    ▒█    ▒█  █ ▒█    ▒█▄▄█  ░█   ▒█   █ ▒█▄▄▀ \n" +
+                "                                     ▒█▄▄█ ▒█▄▄▄ ▒█▄▄▄█ ▒█   █ ▒█▄▄▄  ░█   ▒█  █ ▄█▄ ▒█▄▄█ 　 ▒█▄▄█ ▒█  █ ▒█▄▄█ ▒█▄▄█  ▀▄▄▀ ▒█▄▄█ ▒█░▒█  ░█   ▒█▄▄▄█ ▒█  █ \n" +
                 "\n");
         System.out.println(reset);
+        Thread.sleep(2000);
+        System.out.println("\n" +
+                "                                                                                 ▒█▀▄▀█ ▒█▀▀ ▒█▀▀▄ ▒█  █ \n" +
+                "                                                               ----------------- ▒█ █ █ ▒█▀▀ ▒█  █ ▒█  █ -----------------\n" +
+                "                                                                                 ▒█   █ ▀▀▀▀ ▀▀  ▀   ▀▀▀ ");
+        Thread.sleep(1000);
         System.out.println("What's your name?");
         String name = scanner.next();
 
-//        if (!checkLetters(name)) {
-//            System.out.println("Numbers are not allowed in this field. Try again.");
-//            return;
-//        }
+        if (!checkLetters(name)) {
+            System.out.println("Numbers are not allowed in this field. Try again.");
+            return;
+        }
 
-        System.out.println(name + ", choose:\n" + "[1] Calculate plane figures | [2] Calculate spatial figures | [3] Exit");
+        System.out.println("Hello, " + name + "! Choose an option:" + "[1] Calculate plane figures | [2] Calculate spatial figures | [3] Exit");
         int choice = scanner.nextInt();
 
         switch (choice) {
@@ -41,9 +47,9 @@ public class Main {
                         case 1:
                             System.out.println(name + ", do you want area or perimeter?");
                             System.out.println("[1] Area | [2] Perimeter");
-                            int type = scanner.nextInt();
+                            int type_square = scanner.nextInt();
 
-                            switch (type) {
+                            switch (type_square) {
                                 case 1:
 
                                     System.out.println("Type the value:");
@@ -63,6 +69,30 @@ public class Main {
                             break;
 
                         case 2:
+                            System.out.println(name + ", do you want area or perimeter?");
+                            System.out.println("[1] Area | [2] Perimeter");
+                            int type_rectangle = scanner.nextInt();
+
+                            switch (type_rectangle) {
+                                case 1:
+
+                                    System.out.println("Type the first value:");
+                                    double number = scanner.nextDouble();
+                                    System.out.println("Type the second value:");
+                                    double number2 = scanner.nextDouble();
+                                    Rectangle area = new Rectangle(number, number2);
+                                    System.out.printf("Area of the rectangle is %.2f %n", area.calculateArea());
+                                    break;
+
+                                case 2:
+
+                                    System.out.println("Type the first value:");
+                                    double value = scanner.nextDouble();
+                                    System.out.println("Type the second value:");
+                                    double value2 = scanner.nextDouble();
+                                    Rectangle perimeter = new Rectangle(value, value2);
+                                    System.out.printf("Perimeter of the rectangle is %.2f %n", perimeter.calculatePerimeter());
+                                    break;
                             break;
                         case 3:
                             break;
@@ -114,9 +144,8 @@ public class Main {
                 System.out.println(name + ", invalid choice. Try again.");
                 break;
         }
-
-//        public static boolean checkLetters (String name){
-//            return name.matches("[a-zA-Z]+");
-//        }
+    }
+        public static boolean checkLetters (String name){
+            return name.matches("[a-zA-Z]+");
     }
 }

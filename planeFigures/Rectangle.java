@@ -1,10 +1,18 @@
 package planeFigures;
 
 public class Rectangle {
-    public double calculateArea(double base, double height){
+
+    double base;
+    double height;
+
+    public Rectangle(double base, double height){
+        this.base = base;
+        this.height = height;
+    }
+    public double calculateArea(){
         return base * height;
     }
-    public double calculatePerimeter(double base, double height){
+    public double calculatePerimeter(){
         return (2 * base) + (2 * height);
     }
 }
