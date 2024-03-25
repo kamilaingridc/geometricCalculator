@@ -8,6 +8,23 @@ public class Cone {
     public Cone(double radius, double height){
         this.radius = radius;
         this.height = height;
+
+        int altura = 10;
+        int raio = 5;
+        for (int i = 0; i < altura; i++) {
+            for (int j = 0; j < altura - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < 2 * i + 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < raio * 2; i++) {
+            System.out.print("*");
+        }
+        System.out.println(" ");
+
     }
     public double calculateVolume(){
         float a = (float) 1 /3;

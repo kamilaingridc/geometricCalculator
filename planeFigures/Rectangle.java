@@ -8,6 +8,18 @@ public class Rectangle {
     public Rectangle(double base, double height){
         this.base = base;
         this.height = height;
+
+        int largura = 7;
+        int altura = 5;
+
+        for (int i = 0; i < altura; i++) {
+            for (int j = 0; j < largura; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        System.out.println(" ");
+
     }
     public double calculateArea(){
         return base * height;
